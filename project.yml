@@ -1,0 +1,43 @@
+name: SnapCal
+options:
+  bundleIdPrefix: com.stickytoolz
+  deploymentTarget:
+    iOS: "17.0"
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    SWIFT_STRICT_CONCURRENCY: minimal
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+targets:
+  SnapCal:
+    type: application
+    platform: iOS
+    sources:
+      - SnapCal
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.stickytoolz.snapcal
+        PRODUCT_NAME: SnapCal
+        TARGETED_DEVICE_FAMILY: "1"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ENABLE_PREVIEWS: NO
+    info:
+      path: SnapCal/Info.plist
+      properties:
+        CFBundleDisplayName: SnapCal
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        UILaunchScreen: {}
+        UIRequiresFullScreen: true
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        NSCameraUsageDescription: SnapCal uses the camera to take a picture of your paper calendar.
+        NSPhotoLibraryUsageDescription: SnapCal reads a photo of your paper calendar that you choose.
+        NSCalendarsFullAccessUsageDescription: SnapCal adds the events from your paper calendar to your iPhone calendar, and checks what is already there so nothing gets added twice.
+        NSCalendarsUsageDescription: SnapCal adds the events from your paper calendar to your iPhone calendar.
+schemes:
+  SnapCal:
+    build:
+      targets:
+        SnapCal: all
